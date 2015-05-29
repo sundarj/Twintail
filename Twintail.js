@@ -1,5 +1,4 @@
 var fs = require('fs');
-var Promise = require('promise');
 
 function f(file) {
     return fs.readFileSync(file, {encoding: 'utf-8'});
@@ -80,9 +79,9 @@ function Twintail(append) {
                 return this.utils.wrap('li', line.replace(/^([*\d+])\.? ?/, '$&'));
             },
             '#': function(line) {
-                var reg = /^#+ ?/g;
+                var reg = /^#+/g;
                 var count = line.match(reg)[0];
-                return this.utils.wrap('h'+count.length, line.replace(reg, ''));
+                return this.utils.wrap('h'+count.length, line.replace(reg, '').trim());
             }
             
         };
@@ -176,7 +175,12 @@ function Twintail(append) {
         /* phase 2: inline tags and cleanup */
         view.split("\n").forEach(this.compile.bind(this))
         
-        return view;
+        var v = view;
+        
+        view = '';
+        storage.lastline = storage.vars = '';
+        
+        return v;
     };
 
 
