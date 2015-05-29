@@ -4,9 +4,13 @@
   "description": "",
   "main": "main.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "promise": "~7.0.1",
+    "mocha": "~2.2.1",
+    "expect.js": "~0.3.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --timeout 1000 tests/*.js"
   },
   "author": "",
   "license": "ISC"
