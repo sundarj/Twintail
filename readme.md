@@ -1,4 +1,4 @@
-# Twintail ![](https://img.shields.io/travis/SundarJ/Twintail.svg)
+# Twintail ![](https://img.shields.io/travis/SundarJ/Twintail.svg?style=flat-square)
 
 Compiler for the Anime Twist flavour of Markdown
 
