@@ -82,6 +82,9 @@ function Twintail(append) {
                 var reg = /^#+/g;
                 var count = line.match(reg)[0];
                 return this.utils.wrap('h'+count.length, line.replace(reg, '').trim());
+            },
+            IMG: function(line) {
+                return '<img src="SRC" alt="breasticles">\n'.replace("SRC", line);
             }
             
         };
@@ -101,6 +104,8 @@ function Twintail(append) {
            is the line composed entirely of the character (multiline headers) ? */
         var multiline = ((line[0] in map.multiline) && line.match(new RegExp(line[0], 'g')).join('') === line);
         
+        var img = line.match(/\.(png|svg|jpg|jpeg|jpg:large|gif|webp)$/);
+        
         var self = this;
         
         if (li) {
@@ -111,6 +116,8 @@ function Twintail(append) {
               var action = map.multiline[firstc];
           else if (~Object.keys(this.append).indexOf(firstc))
               var action = append;
+          else if (img)
+              var action = map.IMG;
           else
               var action = map.paragraph;
         
@@ -128,6 +135,7 @@ function Twintail(append) {
     };
 
     Twintail.prototype.compile = function(line) {
+        
         var striptags = /<\/?[^>]+?>/g;
         
         if (/^<li>/.test(line)) {
@@ -160,7 +168,7 @@ function Twintail(append) {
         });
                 
         // remove the extraneous multiline header line
-        if (storage.lastline.replace(striptags, '') === line.replace(striptags, '')) {
+        if (line.match(/^<h/) && (storage.lastline.replace(striptags, '') === line.replace(striptags, ''))) {
             view = view.replace(storage.lastline + '\n', '');   
         }
         storage.lastline = line;

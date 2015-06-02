@@ -2,7 +2,7 @@
 
 This is _Twintail_ - the Anime Twist-flavoured edition of everyone's -least- *favourite* light markup language, Markdown.
 
-https://img.shields.io/travis/SundarJ/Twintail.svg?style=flat-square
+https://img.shields.io/travis/SundarJ/Twintail.svg
 
 おっぱい
 ========
@@ -17,6 +17,10 @@ https://img.shields.io/travis/SundarJ/Twintail.svg?style=flat-square
 ##### h5
 ###### h6
 
+Twintail.svg
+
+https://www.google.co.uk/images/srpr/logo11w.png
+
 *bold*
 _italic_
 -strikethrough-
@@ -25,7 +29,7 @@ _italic_
 
 Things I like:
 
-* /fuchsia 絶対領域
+* 絶対領域
 * Pizazz
 * Flamingos
 
