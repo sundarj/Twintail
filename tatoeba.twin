@@ -2,6 +2,8 @@
 
 This is _Twintail_ - the Anime Twist-flavoured edition of everyone's -least- *favourite* light markup language, Markdown.
 
+https://img.shields.io/travis/SundarJ/Twintail.svg?style=flat-square
+
 おっぱい
 ========
 
@@ -19,7 +21,7 @@ This is _Twintail_ - the Anime Twist-flavoured edition of everyone's -least- *fa
 _italic_
 -strikethrough-
 
-[free candy](::fakku) ^_^
+[free candy](@fakku) ^_^
 
 Things I like:
 

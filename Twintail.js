@@ -94,7 +94,7 @@ function Twintail(append) {
         
         var firstc = line[0];
         
-        /* starts with "number." or "*", but doesn't end with "*" */
+        // starts with "number." or "*", but doesn't end with "*"
         var li = line.match(/^(?!.*\*$)[*\d+]\.?/);
         
         /* is the character in map.multiline and if so,
@@ -119,8 +119,8 @@ function Twintail(append) {
             view += action.call(this, line);
         }
         
-        view = view.replace(/::[^]+?(?=\))/g, function(match) {
-            match = match.replace("::", "");
+        view = view.replace(/@[^]+?(?=\))/g, function(match) {
+            match = match.replace("@", "");
             return storage.vars[match] || '';
         });
         
@@ -142,11 +142,9 @@ function Twintail(append) {
             view = view.replace(storage.lastline, storage.lastline+'\n</list>'.replace('list', el));
         }
         
-        /* remove formatting syntax from <li>s */
-        view = view.replace(/\n<li>[*\d+]\.? ?/g, '\n<li>');
         
-        /* replace _italic_ with <em>italic</em>, etc. */
-        view = view.replace(/([_\*\-])([^_\*\- ]+?)[_\*\-]/, function(match, syntax, text) {
+        // replace _italic_ with <em>italic</em>, etc.
+        view = view.replace(/([_\*\-])([^_\*\- \n]+?)[_\*\-]/, function(match, syntax, text) {
             var formats = {
                 '_': '<em>_</em>',
                 '*': '<strong>*</strong>',
@@ -156,12 +154,12 @@ function Twintail(append) {
             return formats[syntax].replace(syntax, text);
         });
         
-        /* links */
+        // links
         view = view.replace(/\[([^\]]+?)\]\(([^)]+?)\)/, function(match, linktext, href) {
-            return '<a href=HREF>LINKTEXT</a>'.replace('HREF', href).replace('LINKTEXT', linktext);
+            return '<a href="HREF">LINKTEXT</a>'.replace('HREF', href).replace('LINKTEXT', linktext);
         });
                 
-        /* remove the extraneous multiline header line */
+        // remove the extraneous multiline header line
         if (storage.lastline.replace(striptags, '') === line.replace(striptags, '')) {
             view = view.replace(storage.lastline + '\n', '');   
         }
@@ -169,11 +167,14 @@ function Twintail(append) {
     }
 
     Twintail.prototype.render = function(prerender) {
-        /* phase 1: block tags */
+        // phase 1: block tags
         prerender.split("\n").forEach(this.precompile.bind(this));
         
-        /* phase 2: inline tags and cleanup */
-        view.split("\n").forEach(this.compile.bind(this))
+        // phase 2: inline tags and cleanup
+        view.split("\n").forEach(this.compile.bind(this));
+        
+        // li formatting tag removal
+        view = view.replace(/<li>([*\d+]\.? ?)/g, '<li>')
         
         var v = view;
         
