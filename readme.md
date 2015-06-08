@@ -21,6 +21,7 @@ var out = twintail.render('#hello');
 ```md
 
 # heading 1
+
 // or
 
 heading 1
