@@ -81,7 +81,7 @@ hello @fakku
 
 //becomes
 
-hello dude
+<p>hello dude</p>
 
 image.jpg
 //becomes
