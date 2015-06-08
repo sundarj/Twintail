@@ -1,6 +1,6 @@
 {
   "name": "twintail",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Compiler for the Anime Twist flavour of Markdown",
   "main": "main.js",
   "dependencies": {},
