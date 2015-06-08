@@ -1,4 +1,4 @@
-var twintail = require('../Twintail.js');
+var twintail = require('..');
 var expect = require('expect.js');
 
 describe('Hyperlinks', function() {

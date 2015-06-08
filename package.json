@@ -12,6 +12,6 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha --timeout 1000 tests/*.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "jsu",
+  "license": "WTFPL"
 }

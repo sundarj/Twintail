@@ -1,6 +1,4 @@
-var Twintail = require('./Twintail');
+var twintail = require('..');
 
-var twintailed = Twintail.read('example/tatoeba.twin');
+var twintailed = twintail.read('tatoeba.twin');
 console.log(twintailed);
-
-//console.log(Twintail.render('1. h'));
