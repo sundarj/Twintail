@@ -21,10 +21,21 @@ var out = twintail.render('#hello');
 ```md
 
 # heading 1
+// or
+
+heading 1
+===========
+
 // becomes
 <h1>heading 1</h1>
 
 ## heading 2
+
+//or
+
+heading 2
+---------
+
 // becomes
 <h2>heading 2</h2>
 
@@ -82,6 +93,18 @@ hello @fakku
 //becomes
 
 <p>hello dude</p>
+
+*bold*
+//becomes
+<strong>bold</strong>
+
+_italic_
+//becomes
+<em>italic</em>
+
+-strikethrough-
+//becomes
+<strike>strikethrough</strike>
 
 image.jpg
 //becomes
