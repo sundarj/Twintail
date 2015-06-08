@@ -84,7 +84,7 @@ I like pie
     <li>three</li>
 </ol>
 
-(click me)[http://someurlthing]
+[click me](http://someurlthing)
 //becomes
 <a href="http://someurlthing">click me</a>
 
