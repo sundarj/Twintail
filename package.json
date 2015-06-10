@@ -1,6 +1,6 @@
 {
   "name": "twintail",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Compiler for the Anime Twist flavour of Markdown",
   "main": "main.js",
   "dependencies": {},
@@ -13,16 +13,18 @@
     "test": "./node_modules/.bin/mocha --timeout 1000 tests/*.js"
   },
   "author": "jsu",
-  "contributors": [{
+  "contributors": [
+    {
       "name": "nallown",
       "email": "nallown@twist.moe"
-  }],
+    }
+  ],
   "repository": {
-      "type": "git",
-      "url": "https://github.com/SundarJ/Twintail"
+    "type": "git",
+    "url": "https://github.com/SundarJ/Twintail"
   },
   "bugs": {
-      "url": "https://github.com/SundarJ/Twintail/issues"
+    "url": "https://github.com/SundarJ/Twintail/issues"
   },
   "license": "WTFPL"
 }
