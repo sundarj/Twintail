@@ -13,5 +13,16 @@
     "test": "./node_modules/.bin/mocha --timeout 1000 tests/*.js"
   },
   "author": "jsu",
+  "contributors": [{
+      "name": "nallown",
+      "email": "nallown@twist.moe"
+  }],
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/SundarJ/Twintail"
+  },
+  "bugs": {
+      "url": "https://github.com/SundarJ/Twintail/issues"
+  },
   "license": "WTFPL"
 }
