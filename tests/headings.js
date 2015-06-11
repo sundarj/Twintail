@@ -13,12 +13,4 @@ describe('Headings', function() {
         });
     }
 
-    it('should render a h1 element', function() {
-      expect(twintail.render('title\n=====')).to.equal('<h1>title</h1>\n');
-    });
-
-    it('should render a h2 element', function() {
-      expect(twintail.render('title\n-----')).to.equal('<h2>title</h2>\n');
-    });
-
 });
