@@ -1,8 +1,8 @@
 {
   "name": "twintail",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Compiler for the Anime Twist flavour of Markdown",
-  "main": "main.js",
+  "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "promise": "~7.0.1",

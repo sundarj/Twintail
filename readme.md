@@ -95,7 +95,7 @@ _italic_
 //becomes
 <strike>strikethrough</strike>
 
-\\*bold*
+!*bold*
 //becomes
 *bold*
 
